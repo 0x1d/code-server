@@ -1,0 +1,20 @@
+stages:
+- name: Publish Catalog
+  steps:
+  - publishCatalogConfig:
+      path: ./deployment/charts/code-server
+      catalogTemplate: code-server
+      version: latest
+      gitUrl: https://github.com/0x1d/charts.git
+      gitBranch: master
+      gitAuthor: "0x1d"
+      gitEmail: patrick.balsiger@wirelos.net
+    envFrom:
+    - sourceName: github-deploy-key
+      sourceKey: USERNAME
+      targetKey: USERNAME
+    - sourceName: github-deploy-key
+      sourceKey: PASSWORD
+      targetKey: PASSWORD
+timeout: 60
+notification: {}
