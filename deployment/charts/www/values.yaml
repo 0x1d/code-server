@@ -1,0 +1,10 @@
+enabled: true
+replicaCount: 1
+hosts:
+ingress:
+  enabled: false
+#config:
+#  volumeName: brudi-sites-www-config
+#  volumeMountPath: /opt/config
+#  secretName: brudi-sites-www-config
+#resources: {}
